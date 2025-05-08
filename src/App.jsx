@@ -35,7 +35,7 @@ return (
     agregarCategoria={agregarCategoria} 
     />
 
-    <h2>Movimientos ingreasados: </h2>
+    <h2>Movimientos ingresados: </h2>
     <ul>
       {movimientos.map((mov, index) => (
         <li key={index}>
