@@ -6,21 +6,23 @@ function MovementForm({ agregarMovimiento, categorias, agregarCategoria }) {
   const [tipo, setTipo] = useState('Ingreso');
   const [categoria, setCategoria] = useState('');
   const [nuevaCategoria, setNuevaCategoria] = useState('');
+  const [fecha, setFecha] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (descripcion && monto && categoria) {
+    if (descripcion && monto && categoria && fecha) {
       agregarMovimiento({
         id: Date.now(),
         descripcion,
         monto: parseFloat(monto),
         tipo,
         categoria,
-        fecha: new Date().toLocaleDateString(),
+        fecha,
       });
       setDescripcion('');
       setMonto('');
       setCategoria('');
+      setFecha('');
     } else {
       alert('Por favor, completa todos los campos.');
     }
@@ -101,6 +103,11 @@ function MovementForm({ agregarMovimiento, categorias, agregarCategoria }) {
             </button>
           </div>
         )}
+        <input
+          type="date"
+          value={fecha}
+          onChange={(e) => setFecha(e.target.value)}
+        />
         <button type="submit">Agregar Movimiento</button>
       </form>
     </div>
