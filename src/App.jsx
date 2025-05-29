@@ -23,29 +23,44 @@ function App() {
   }
  };
 
+  // Calcular totales
+  const totalIngresos = movimientos
+    .filter(mov => mov.tipo === "Ingreso")
+    .reduce((acc, mov) => acc + mov.monto, 0);
 
+  const totalGastos = movimientos
+    .filter(mov => mov.tipo === "Gasto" || mov.tipo === "Egreso")
+    .reduce((acc, mov) => acc + mov.monto, 0);
 
-return (
-  <div>
+  const balance = totalIngresos - totalGastos;
 
-    <h1>Control de gastos </h1>
-    <MovementForm 
-    agregarMovimiento={agregarMovimiento} 
-    categorias={categorias} 
-    agregarCategoria={agregarCategoria} 
-    />
+  return (
+    <div>
+      <h1>Control de gastos </h1>
+      <MovementForm 
+        agregarMovimiento={agregarMovimiento} 
+        categorias={categorias} 
+        agregarCategoria={agregarCategoria} 
+      />
 
-    <h2>Movimientos ingresados: </h2>
-    <ul>
-      {movimientos.map((mov, index) => (
-        <li key={index}>
-          {mov.descripcion}- ${mov.monto} -  {mov.tipo} - {mov.categoria} - {mov.fecha}
-          <button onClick={() => eliminarMovimiento(mov.id)}>x</button>
-        </li>
-      ))}
-    </ul>
+      <h2>Balance</h2>
+      <p>Ingresos: ${totalIngresos}</p>
+      <p>Gastos: ${totalGastos}</p>
+      <p>Balance: ${balance}</p>
+
+      <h2>Movimientos ingresados: </h2>
+      <ul>
+        {[...movimientos]
+          .sort((a, b) => new Date(b.fecha) - new Date(a.fecha))
+          .map((mov, index) => (
+            <li key={index}>
+              {mov.descripcion}- ${mov.monto} -  {mov.tipo} - {mov.categoria} - {mov.fecha}
+              <button onClick={() => eliminarMovimiento(mov.id)}>x</button>
+            </li>
+        ))}
+      </ul>
     </div>
-    );
-  
+  );
 }
-    export default App;
+
+export default App;

@@ -10,6 +10,18 @@ function MovementForm({ agregarMovimiento, categorias, agregarCategoria }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (descripcion.length > 100) {
+      alert('La descripción no puede superar los 100 caracteres.');
+      return;
+    }
+    if (parseFloat(monto) < 0) {
+      alert('El monto no puede ser negativo.');
+      return;
+    }
+    if (monto.length > 8) {
+      alert('El monto no puede superar los 8 dígitos.');
+      return;
+    }
     if (descripcion && monto && categoria && fecha) {
       agregarMovimiento({
         id: Date.now(),
@@ -53,13 +65,27 @@ function MovementForm({ agregarMovimiento, categorias, agregarCategoria }) {
           type="text"
           placeholder="Descripción"
           value={descripcion}
-          onChange={(e) => setDescripcion(e.target.value)}
+          onChange={(e) => {
+            if (e.target.value.length <= 100) {
+              setDescripcion(e.target.value);
+            } else {
+              alert('La descripción no puede superar los 100 caracteres.');
+            }
+          }}
         />
         <input
           type="number"
           placeholder="Monto"
           value={monto}
-          onChange={(e) => setMonto(e.target.value)}
+          onChange={(e) => {
+            const value = e.target.value;
+            // Permitir vacío, o hasta 8 dígitos
+            if (value === '' || value.length <= 8) {
+              setMonto(value);
+            } else {
+              alert('El monto no puede superar los 8 dígitos.');
+            }
+          }}
         />
         <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
           <option value="Ingreso">Ingreso</option>
