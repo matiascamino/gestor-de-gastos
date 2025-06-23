@@ -10,11 +10,23 @@ const app = express();
 const PORT = process.env.PORT || 3001;
 const FRONTEND_URL = process.env.FRONTEND_URL || 'http://localhost:5173';
 
+const allowedOrigins = [
+  'http://localhost:5173',
+  'https://gestor-de-gastos-b8od-qawttyujr-matias-caminos-projects.vercel.app',
+  'https://gestor-de-gastos-b8od.vercel.app'
+];
+
 app.use(cors({
-  origin: FRONTEND_URL,
-  allowedHeaders: ['Content-Type', 'Authorization'],
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS: ' + origin));
+    }
+  },
   credentials: true
 }));
+
 
 app.use(express.json());
 
