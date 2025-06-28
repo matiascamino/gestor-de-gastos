@@ -7,7 +7,7 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Navbar from './components/NavBar';
 import PrivateRoute from './components/PrivateRoute'; 
-import './app.css'; 
+import './App.css'; 
 
 function App() {
   return (
