@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import MovementForm from '../components/MovementForm';
+import './styles/AgregarMovimientoPage.css'; 
+import { Link } from 'react-router-dom';
 
 function EditarMovimientoPage() {
     const { id } = useParams();
@@ -93,15 +95,22 @@ function EditarMovimientoPage() {
     if (!movimiento) return <div>Cargando...</div>;
 
     return (
-        <div>
-            <h2>Editar Movimiento</h2>
-            <MovementForm
-                categorias={categorias}
-                agregarCategoria={agregarCategoria}
-                movimientoInicial={movimiento}
-                onSubmit={editarMovimiento}
-            />
-        </div>
+        <>
+            <div className="volver-wrapper">
+                <Link to="/" className="volver-btn">← Volver a Movimientos</Link>
+            </div>
+            <div className='container'>
+                <div className='form-wrapper'>
+                    <h2 className='title'>Editar Movimiento</h2>
+                    <MovementForm
+                        categorias={categorias}
+                        agregarCategoria={agregarCategoria}
+                        movimientoInicial={movimiento}
+                        onSubmit={editarMovimiento}
+                    />
+                </div>
+            </div>
+        </>
     );
 }
 

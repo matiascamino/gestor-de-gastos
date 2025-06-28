@@ -42,6 +42,9 @@ app.use('/api/dashboard', dashboardRoutes);
 const authRoutes = require('./auth/authRoutes');
 app.use('/api/auth', authRoutes);
 
+const budgetRoutes = require('./budget/budgetRoutes');
+app.use('/api/budget', budgetRoutes);
+
 
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en http://localhost:${PORT}`);

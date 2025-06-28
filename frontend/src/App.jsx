@@ -6,12 +6,13 @@ import DashboardPage from './pages/DashboardPage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Navbar from './components/NavBar';
-import PrivateRoute from './components/PrivateRoute';
+import PrivateRoute from './components/PrivateRoute'; 
+import './app.css'; 
 
 function App() {
   return (
     <Router>
-      <Navbar /> {/* Ahora sí se ve en todas las páginas */}
+      <Navbar /> 
       <Routes>
         <Route path="/" element={<PrivateRoute><MovementsPage /></PrivateRoute>} />
         <Route path="/agregar" element={<PrivateRoute><AgregarMovimientoPage /></PrivateRoute>} />

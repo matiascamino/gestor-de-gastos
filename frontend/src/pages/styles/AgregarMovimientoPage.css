@@ -1,0 +1,45 @@
+.container {
+  width: 100%;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-wrapper {
+  background-color: #2196f3; /* fondo azul */
+  padding: 2rem;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: white;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  color: white;
+}
+
+.volver-wrapper {
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.volver-btn {
+  background-color: #777;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  display: inline-block;
+  transition: background-color 0.3s;
+}
+
+.volver-btn:hover {
+  background-color: #555;
+}

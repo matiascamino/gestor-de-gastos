@@ -1,5 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import './styles/MovementsPage.css'; // Asegúrate de que este archivo exista y tenga estilos adecuados
+import { Card, CardContent, Typography, Button, Stack } from '@mui/material';
+
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001';
 
@@ -73,25 +76,42 @@ function MovementsPage() {
     }
   };
 
+
   return (
-    <div>
-      <h2>Movimientos Registrados</h2>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <ul>
-        {movimientos.map(mov => (
-          <li key={mov.id}>
-            {new Date(mov.fecha).toLocaleDateString('es-AR')} - {mov.descripcion} - {mov.tipo} - {mov.categoria} - ${mov.monto}
-            {' '}
-            <Link to={`/movimientos/editar/${mov.id}`} style={{ marginLeft: '10px' }}>Editar</Link>
-            {' '}
-            <button onClick={() => eliminarMovimiento(mov.id)} style={{ marginLeft: '10px' }}>
-              Eliminar
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+    <div className="container">
+      <h2 className="title">Movimientos</h2>
+      <button className="filter-btn">Filtrar</button>
+      <div className='movimientos-wrapper'>
+        <div className="movimientos-box">
+          {error && <p className="error">{error}</p>}
+          {movimientos.map(mov => (
+            <div key={mov.id} className="movimiento-card">
+              <div className="movimiento-info">
+                <div className="categoria">{mov.categoria}</div>
+                <div className="tipo">tipo: {mov.tipo}</div>
+                <div className="descripcion">{mov.descripcion}</div>
+              </div>
+              <div className="movimiento-derecha">
+                <button className="delete-btn" onClick={() => eliminarMovimiento(mov.id)}>X</button>
+                <div className="monto">${parseFloat(mov.monto).toFixed(2)}</div>
+                <div className="fecha">{new Date(mov.fecha).toLocaleDateString('es-AR')}</div>
+                <div className="acciones">
+                  <Link to={`/movimientos/editar/${mov.id}`} className="edit-btn">Editar</Link>
+
+                </div>
+              </div>
+            </div>
+
+          ))}
+        </div>
+       </div>
+      
+
+        <div className="agregar-wrapper">
+          <Link to="/agregar" className="agregar-btn">Agregar Nuevo Movimiento</Link>
+        </div>
+      </div>
+      )
 }
 
-export default MovementsPage;
+      export default MovementsPage;

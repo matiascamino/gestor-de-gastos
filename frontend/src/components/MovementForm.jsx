@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-
+import './styles/MovementForm.css'; 
 function MovementForm({ agregarMovimiento, categorias, agregarCategoria, movimientoInicial, onSubmit }) {
   const [descripcion, setDescripcion] = useState('');
   const [monto, setMonto] = useState('');
@@ -73,61 +73,67 @@ function MovementForm({ agregarMovimiento, categorias, agregarCategoria, movimie
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          placeholder="Descripción"
-          value={descripcion}
-          onChange={(e) => setDescripcion(e.target.value)}
-        />
-        <input
-          type="number"
-          placeholder="Monto"
-          value={monto}
-          onChange={(e) => setMonto(e.target.value)}
-        />
-        <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
-          <option value="Ingreso">Ingreso</option>
-          <option value="Gasto">Gasto</option>
-        </select>
-        <select value={categoria} onChange={handleCategoriaChange}>
-          <option value="">Seleccionar categoría</option>
-          {categorias.map((cat, index) => (
-            <option key={index} value={cat}>
-              {cat}
-            </option>
-          ))}
-          <option value="Otro">Otro</option>
-        </select>
-        {categoria === 'Otro' && (
-          <div>
-            <input
-              type="text"
-              placeholder="Nueva categoría"
-              value={nuevaCategoria}
-              onChange={(e) => setNuevaCategoria(e.target.value)}
-            />
-            <button type="button" onClick={handleAgregarCategoria}>
-              Agregar Categoría
-            </button>
-          </div>
-        )}
-        <input
-          type="date"
-          value={fecha}
-          onChange={(e) => setFecha(e.target.value)}
-        />
 
-        {/* Mostrar error si existe */}
-        {errorMensaje && <p style={{ color: 'red' }}>{errorMensaje}</p>}
+  <div className="form-container">
+    <form onSubmit={handleSubmit} className="form-content">
+      <input
+        type="text"
+        placeholder="Descripción"
+        value={descripcion}
+        onChange={(e) => setDescripcion(e.target.value)}
+      />
+      <input
+        type="number"
+        placeholder="Monto"
+        value={monto}
+        onChange={(e) => setMonto(e.target.value)}
+      />
+      <select value={tipo} onChange={(e) => setTipo(e.target.value)}>
+        <option value="Ingreso">Ingreso</option>
+        <option value="Gasto">Gasto</option>
+      </select>
+      <select value={categoria} onChange={handleCategoriaChange}>
+        <option value="">Seleccionar categoría</option>
+        {categorias.map((cat, index) => (
+          <option key={index} value={cat}>
+            {cat}
+          </option>
+        ))}
+        <option value="Otro">Otro</option>
+      </select>
 
-        <button type="submit">
-          {onSubmit ? 'Guardar Cambios' : 'Agregar Movimiento'}
-        </button>
-      </form>
+      {categoria === 'Otro' && (
+        <div>
+          <input
+            type="text"
+            placeholder="Nueva categoría"
+            value={nuevaCategoria}
+            onChange={(e) => setNuevaCategoria(e.target.value)}
+          />
+          <button type="button" onClick={handleAgregarCategoria}>
+            Agregar Categoría
+          </button>
+        </div>
+      )}
+
+      <input
+        type="date"
+        value={fecha}
+        onChange={(e) => setFecha(e.target.value)}
+      />
+
+      {errorMensaje && <p style={{ color: 'red' }}>{errorMensaje}</p>}
+    </form>
+
+    {/* Botón afuera del formulario, pero asociado con submit */}
+    <div className="submit-wrapper">
+      <button type="submit" onClick={handleSubmit}>
+        {onSubmit ? 'Guardar Cambios' : 'Guardar'}
+      </button>
     </div>
-  );
+  </div>
+);
+
 }
 
 export default MovementForm;

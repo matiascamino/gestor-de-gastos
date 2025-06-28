@@ -1,5 +1,7 @@
 import MovementForm from '../components/MovementForm';
 import { useState, useEffect } from 'react';
+import './styles/AgregarMovimientoPage.css';
+import { Link } from 'react-router-dom';
 
 function AgregarMovimientoPage() {
   const [categorias, setCategorias] = useState([]);
@@ -90,15 +92,23 @@ function AgregarMovimientoPage() {
   };
 
   return (
-    <div>
-      <h2>Agregar Movimiento</h2>
-      <MovementForm
-        agregarMovimiento={agregarMovimiento}
-        categorias={categorias}
-        agregarCategoria={agregarCategoria}
-      />
-    </div>
+    <>
+      <div className="volver-wrapper">
+        <Link to="/" className="volver-btn">← Volver a Movimientos</Link>
+      </div>
+      <div className="container">
+        <div className="form-wrapper">
+          <h2 className="title">Agregar Movimiento</h2>
+          <MovementForm
+            agregarMovimiento={agregarMovimiento}
+            categorias={categorias}
+            agregarCategoria={agregarCategoria}
+          />
+        </div>
+      </div>
+    </>
   );
+
 }
 
 export default AgregarMovimientoPage;

@@ -4,6 +4,7 @@ body {
   padding: 0;
   background-color: #f9f9f9;
   color: #333;
+  max-width: 100%;
 }
 
 h1, h2, h3 {
@@ -11,14 +12,7 @@ h1, h2, h3 {
   color: #444;
 }
 
-div {
-  margin: 20px auto;
-  padding: 20px;
-  max-width: 600px;
-  background: #fff;
-  border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+
 
 button {
   background-color: #007bff;
@@ -51,7 +45,7 @@ li {
   margin: 10px 0;
   padding: 10px;
   background: #f1f1f1;
-  border-radius: 4px;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;

@@ -1,0 +1,86 @@
+.dashboard-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  align-self: flex-start;
+}
+
+.dashboard-filtros {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  align-self: flex-start;
+}
+
+.dashboard-filtros label {
+  display: flex;
+  flex-direction: column;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.dashboard-filtros input {
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  width: 80px;
+}
+
+.dashboard-filtros button {
+  padding: 0.5rem 1rem;
+  background-color: #2196f3;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: flex-end;
+  margin-top: 20px;
+}
+
+.resumen-cards {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.resumen-card {
+  flex: 1;
+  background-color: white;
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.resumen-titulo {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #2196f3;
+}
+
+.resumen-valor {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.balance-positivo {
+  color: #4caf50;
+}
+
+.balance-negativo {
+  color: #f44336;
+}
