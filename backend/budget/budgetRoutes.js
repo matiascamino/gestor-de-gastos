@@ -4,7 +4,7 @@ const verificarToken = require('../auth/authMiddleware');
 const {
   obtenerPresupuesto,
   guardarPresupuesto
-} = require('./BudgetControllers');
+} = require('./budgetControllers');
 
 router.get('/', verificarToken, obtenerPresupuesto);
 router.post('/', verificarToken, guardarPresupuesto);
