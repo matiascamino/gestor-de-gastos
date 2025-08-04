@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 const controller = require('./movementsController');
 const verificarToken = require('../auth/authMiddleware');
- // ajustá la ruta si es necesario
+
 
 // Todas las rutas deben validar token (usuario logueado)
 router.use(verificarToken);

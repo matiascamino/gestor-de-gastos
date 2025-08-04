@@ -131,3 +131,126 @@
   font-weight: bold;
   cursor: pointer;
 }
+
+/* Media Queries para dispositivos móviles */
+@media (max-width: 600px) {
+  .container {
+    padding: 0.2rem;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .title {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    align-self: center;
+    width: 100%;
+    text-align: center;
+  }
+
+  .movimientos-wrapper {
+    padding: 0.3rem;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    max-height: none;
+    min-height: 60vh;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .categoria {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    word-break: break-word;
+  }
+
+  .tipo {
+    font-size: 0.95rem;
+    margin-bottom: 3px;
+    word-break: break-word;
+  }
+
+  .movimientos-box {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+
+  .movimiento-card {
+    padding: 0.4rem;
+    gap: 0.3rem;
+    margin-bottom: 0.4rem;
+    width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    margin-bottom: 0.7rem;
+    word-break: break-word;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .movimiento-info {
+    align-items: flex-start;
+    min-width: 0;
+    width: 60%;
+    box-sizing: border-box;
+    margin-bottom: 0;
+    font-size: 0.9rem;
+    word-break: break-word;
+  }
+
+  .movimiento-derecha {
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 0.2rem;
+    margin-top: 0;
+    width: 40%;
+    min-width: 80px;
+    box-sizing: border-box;
+    word-break: break-word;
+  }
+
+  .monto {
+    font-size: 0.95rem;
+    word-break: break-word;
+    margin-right: 0;
+  }
+
+  .acciones {
+    gap: 0.3rem;
+    width: auto;
+    justify-content: flex-end;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .edit-btn,
+  .delete-btn {
+    padding: 0.2rem 0.5rem;
+    font-size: 0.9rem;
+    min-width: 50px;
+    margin-bottom: 0;
+  }
+
+  .agregar-wrapper {
+    margin-top: 0.7rem;
+    width: 100%;
+  }
+
+  .agregar-btn {
+    width: 100%;
+    padding: 0.5rem 0;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+  }
+}
+

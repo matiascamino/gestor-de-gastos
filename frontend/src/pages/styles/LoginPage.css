@@ -59,3 +59,33 @@
   font-weight: bold;
   text-align: center;
 }
+
+@media (max-width: 600px) {
+  .login-container {
+    max-width: 100%;
+    margin: 2rem 0.5rem;
+    padding: 0.5rem 0.2rem;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.95rem;
+  }
+
+  .login-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .login-form {
+    gap: 0.7rem;
+  }
+
+  .login-input {
+    font-size: 0.95rem;
+    padding: 6px;
+  }
+
+  .login-button {
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+}

@@ -84,3 +84,57 @@
 .balance-negativo {
   color: #f44336;
 }
+
+@media (max-width: 600px) {
+  .dashboard-container {
+    padding: 0.2rem;
+    font-size: 0.95rem;
+  }
+
+  .dashboard-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .dashboard-filtros {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+
+  .dashboard-filtros label {
+    font-size: 0.9rem;
+  }
+
+  .dashboard-filtros input {
+    font-size: 0.95rem;
+    padding: 6px;
+    width: 100%;
+  }
+
+  .dashboard-filtros button {
+    width: 100%;
+    margin-top: 10px;
+    font-size: 0.95rem;
+    padding: 0.5rem 0;
+  }
+
+  .resumen-cards {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .resumen-card {
+    padding: 0.7rem;
+    font-size: 0.95rem;
+  }
+
+  .resumen-titulo {
+    font-size: 0.95rem;
+  }
+
+  .resumen-valor {
+    font-size: 1.1rem;
+  }
+}

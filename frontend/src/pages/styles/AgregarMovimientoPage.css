@@ -43,3 +43,58 @@
 .volver-btn:hover {
   background-color: #555;
 }
+
+@media (max-width: 600px) {
+  .container {
+    padding: 0.2rem;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-x: hidden;
+  }
+
+  .form-wrapper {
+    padding: 0.5rem;
+    width: 100%;
+    max-width: 100%;
+    border-radius: 0;
+    box-shadow: none;
+    box-sizing: border-box;
+  }
+
+  .title {
+    font-size: 1.1rem;
+    margin-bottom: 0.4rem;
+    text-align: center;
+  }
+
+  .volver-wrapper {
+    margin-bottom: 0.7rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .volver-btn {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.95rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  input, select {
+    width: 100%;
+    margin: 10px 0 0 0;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    padding: 6px;
+  }
+
+  button, .guardar-btn {
+    width: 100%;
+    box-sizing: border-box;
+    font-size: 0.95rem;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+  }
+}

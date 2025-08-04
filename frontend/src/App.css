@@ -28,4 +28,17 @@ li {
   border-radius: 5px;
 }
 
+@media (max-width: 600px) {
+  body {
+    font-size: 14px;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .container {
+    padding: 0.5rem;
+  }
+}
 
